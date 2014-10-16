@@ -1,7 +1,7 @@
 Contao Extension: PHPInfo
 =========================
 
-Display ´phpinfo´ output in Contao backend.
+Display `phpinfo` output in Contao backend.
 
 
 Installation
