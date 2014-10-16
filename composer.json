@@ -1,0 +1,34 @@
+{
+	"name":"cliffparnitzky/php-info",
+	"description":"Display phpinfo output in Contao backend.",
+	"keywords":["contao","backend","php info"],
+	"type":"contao-module",
+	"license":"LGPL-3.0+",
+	"authors":[
+		{
+			"name":"Cliff Parnitzky",
+			"email":"contao@cliff-parnitzky.de",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"email":"contao@cliff-parnitzky.de",
+		"issues":"https://github.com/cliffparnitzky/PHPInfo/issues",
+		"source":"https://github.com/cliffparnitzky/PHPInfo"
+	},
+	"require":{
+		"php":">=5.3",
+		"contao/core":">=3.0.0,<4.0.0-dev",
+		"contao-community-alliance/composer-installer":"*"
+	},
+	"extra":{
+		"contao":{
+			"sources":{
+				"system/modules/PHPInfo":"system/modules/PHPInfo"
+			}
+		},
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}
