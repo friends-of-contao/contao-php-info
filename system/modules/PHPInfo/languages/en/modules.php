@@ -25,16 +25,11 @@
  * @author     Cliff Parnitzky
  * @package    PHPInfo
  * @license    LGPL
- * @filesource [phpinfo] by Christian Steurer (Russe)
- */
+ */ 
 
 /**
- * Backend modules
+ * Define name and tooltip for preferences (inactive modules)
  */
-$GLOBALS['BE_MOD']['system']['PHPInfo'] = array
-(
-	'icon'       => 'system/modules/PHPInfo/assets/icon.png',
-	'callback'   => '\PHPInfo\PHPInfo'
-);
+$GLOBALS['TL_LANG']['MOD']['PHPInfo'] = array('PHP info', 'Display <i>phpinfo</i> output in Contao backend.');
 
 ?>
