@@ -1,4 +1,4 @@
 
-<div id="phpinfo">
+<div id="phpinfo" class="<?php echo $this->class; ?>">
 <?php echo $this->pinfo; ?>
 </div>

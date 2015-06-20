@@ -26,8 +26,8 @@
  * @package    PHPInfo
  * @license    LGPL
  * @filesource [phpinfo] by Christian Steurer (Russe)
- */ 
- 
+ */
+
 /**
  * Run in a custom namespace, so the class can be replaced
  */
@@ -40,15 +40,15 @@ namespace PHPInfo;
  * @copyright  Cliff Parnitzky 2014
  * @author     Cliff Parnitzky
  * @package    Controller
- */ 
+ */
 class PHPInfo extends \BackendModule
 {
 	protected $strTemplate = 'be_PHPInfo';
 
 	public function compile()
 	{
-		$GLOBALS['TL_CSS'][] = 'system/modules/PHPInfo/assets/backend.css'; 
-		
+		$GLOBALS['TL_CSS'][] = 'system/modules/PHPInfo/assets/backend.css';
+
 		ob_start();
 		phpinfo();
 		$pinfo = ob_get_contents();
@@ -69,8 +69,10 @@ class PHPInfo extends \BackendModule
 		// add div container to cell content because of overflow=auto
 		$pinfo = preg_replace('%<td class="v">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
 		$pinfo = preg_replace('%<td class="e">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
-		
+
 		$this->Template->pinfo = $pinfo;
+
+		$this->Template->class = 'v'.PHP_MAJOR_VERSION.PHP_MINOR_VERSION;
 	}
 }
 ?>
