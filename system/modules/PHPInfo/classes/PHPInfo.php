@@ -49,29 +49,52 @@ class PHPInfo extends \BackendModule
 	{
 		$GLOBALS['TL_CSS'][] = 'system/modules/PHPInfo/assets/backend.css';
 
-		ob_start();
-		phpinfo();
-		$pinfo = ob_get_clean();
+		// check if phpinfo() is disabled
+		$this->Template->disableFunctions = $this->isDisabled('disable_functions');
+		$this->Template->suhosinBlacklist = $this->isDisabled('suhosin.executor.func.blacklist');
 
-		// get content of phpinfo only
-		$pinfo = preg_replace('%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo);
+		if (!$this->Template->disableFunctions && !$this->Template->suhosinBlacklist)
+		{
+			ob_start();
+			phpinfo();
+			$pinfo = ob_get_clean();
 
-		// adapt table layout
-		$pinfo = str_replace('<table border="0" cellpadding="3" width="600">', '<table border="1" cellpadding="3">', $pinfo);
+			// get content of phpinfo only
+			$pinfo = preg_replace('%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo);
 
-		// remove blank at end of table data
-		$pinfo = str_replace(' </td>', '</td>', $pinfo);
+			// adapt table layout
+			$pinfo = str_replace('<table border="0" cellpadding="3" width="600">', '<table border="1" cellpadding="3">', $pinfo);
 
-		// remove a-tags from h2
-		$pinfo = preg_replace('%<h2><a .*>(.*)</a></h2>%', '<h2>$1</h2>', $pinfo);
+			// remove blank at end of table data
+			$pinfo = str_replace(' </td>', '</td>', $pinfo);
 
-		// add div container to cell content because of overflow=auto
-		$pinfo = preg_replace('%<td class="v">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
-		$pinfo = preg_replace('%<td class="e">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
+			// remove a-tags from h2
+			$pinfo = preg_replace('%<h2><a .*>(.*)</a></h2>%', '<h2>$1</h2>', $pinfo);
 
-		$this->Template->pinfo = $pinfo;
+			// add div container to cell content because of overflow=auto
+			$pinfo = preg_replace('%<td class="v">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
+			$pinfo = preg_replace('%<td class="e">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
+
+			$this->Template->pinfo = $pinfo;
+		}
 
 		$this->Template->class = 'v'.PHP_MAJOR_VERSION.PHP_MINOR_VERSION;
+	}
+
+
+	/**
+	 * Check if phpinfo() is disabled
+	 * @param string
+	 * @return boolean
+	 */
+	public function isDisabled($directive)
+	{
+		$strValues = ini_get($directive);
+		if (in_array('phpinfo', preg_split('%,\s*%', $strValues)))
+		{
+			return true;
+		}
+		return false;
 	}
 }
 ?>
