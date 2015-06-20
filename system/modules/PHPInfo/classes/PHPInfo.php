@@ -72,8 +72,7 @@ class PHPInfo extends \BackendModule
 			$pinfo = preg_replace('%<h2><a .*>(.*)</a></h2>%', '<h2>$1</h2>', $pinfo);
 
 			// add div container to cell content because of overflow=auto
-			$pinfo = preg_replace('%<td class="v">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
-			$pinfo = preg_replace('%<td class="e">(.*?)</td>%', '<td class="v"><div class="scroll">$1</div></td>', $pinfo);
+			$pinfo = preg_replace('%<td class="([ev])">(.*?)</td>%', '<td class="$1"><div class="scroll">$2</div></td>', $pinfo);
 
 			$this->Template->pinfo = $pinfo;
 		}
