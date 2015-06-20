@@ -97,4 +97,3 @@ class PHPInfo extends \BackendModule
 		return false;
 	}
 }
-?>

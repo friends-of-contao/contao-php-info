@@ -36,5 +36,3 @@ $GLOBALS['BE_MOD']['system']['PHPInfo'] = array
 	'icon'       => 'system/modules/PHPInfo/assets/icon.png',
 	'callback'   => '\PHPInfo\PHPInfo'
 );
-
-?>
