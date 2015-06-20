@@ -25,11 +25,11 @@
  * @author     Cliff Parnitzky
  * @package    PHPInfo
  * @license    LGPL
- */ 
+ */
 
 /**
  * Define name and tooltip for preferences (inactive modules)
  */
-$GLOBALS['TL_LANG']['MOD']['PHPInfo'] = array('PHP Info', 'Anzeige der <i>phpinfo</i> Ausgabe im Contao Backend.');
+$GLOBALS['TL_LANG']['MOD']['PHPInfo'] = array('PHP-Info', 'Anzeige der <i>phpinfo</i>-Ausgabe im Contao-Backend.');
 
 ?>
