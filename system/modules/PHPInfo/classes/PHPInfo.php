@@ -51,8 +51,7 @@ class PHPInfo extends \BackendModule
 
 		ob_start();
 		phpinfo();
-		$pinfo = ob_get_contents();
-		ob_end_clean();
+		$pinfo = ob_get_clean();
 
 		// get content of phpinfo only
 		$pinfo = preg_replace('%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo);
