@@ -33,8 +33,6 @@ class PHPInfo extends \BackendModule
 
 	public function compile()
 	{
-		$GLOBALS['TL_CSS'][] = 'system/modules/PHPInfo/assets/backend.css';
-
 		// check if phpinfo() is disabled
 		$this->Template->disableFunctions = $this->isDisabled('disable_functions');
 		$this->Template->suhosinBlacklist = $this->isDisabled('suhosin.executor.func.blacklist');

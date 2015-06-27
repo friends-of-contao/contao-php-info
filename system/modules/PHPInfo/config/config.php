@@ -19,6 +19,7 @@
  */
 $GLOBALS['BE_MOD']['system']['PHPInfo'] = array
 (
+	'callback'   => '\PHPInfo\PHPInfo',
 	'icon'       => 'system/modules/PHPInfo/assets/icon.png',
-	'callback'   => '\PHPInfo\PHPInfo'
+	'stylesheet' => 'system/modules/PHPInfo/assets/backend.css'
 );
