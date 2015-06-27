@@ -62,8 +62,11 @@ class PHPInfo extends \BackendModule
 			// get content of phpinfo only
 			$pinfo = preg_replace('%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo);
 
-			// adapt table layout
-			$pinfo = str_replace('<table border="0" cellpadding="3" width="600">', '<table border="1" cellpadding="3">', $pinfo);
+			if (version_compare(PHP_VERSION, '5.6.0', '<'))
+			{
+				// adjust table layout
+				$pinfo = str_replace('<table border="0" cellpadding="3" width="600">', '<table>', $pinfo);
+			}
 
 			// remove blank at end of table data
 			$pinfo = str_replace(' </td>', '</td>', $pinfo);
