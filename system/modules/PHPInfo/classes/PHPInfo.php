@@ -29,8 +29,17 @@ namespace PHPInfo;
  */
 class PHPInfo extends \BackendModule
 {
+
+	/**
+	 * Template
+	 * @var string
+	 */
 	protected $strTemplate = 'be_PHPInfo';
 
+
+	/**
+	 * Generate the module
+	 */
 	public function compile()
 	{
 		// check if phpinfo() is disabled
