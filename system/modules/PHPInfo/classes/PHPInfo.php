@@ -22,10 +22,11 @@ namespace PHPInfo;
 /**
  * Class PHPInfo
  *
- * Call phpinfo in the template.
+ * Call phpinfo() in the template.
  * @copyright  Cliff Parnitzky 2014
  * @author     Cliff Parnitzky
- * @package    Controller
+ * @author     Christoph Krebs
+ * @package    PHPInfo
  */
 class PHPInfo extends \BackendModule
 {
@@ -52,7 +53,7 @@ class PHPInfo extends \BackendModule
 			phpinfo();
 			$pinfo = ob_get_clean();
 
-			// get content of phpinfo only
+			// get content of phpinfo() only
 			$pinfo = preg_replace('%^.*<body>(.*)</body>.*$%ms', '$1', $pinfo);
 
 			if (version_compare(PHP_VERSION, '5.6.0', '<'))
