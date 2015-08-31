@@ -28,6 +28,9 @@
 	"conflict": {
 		"contao/core":"3.4.0,3.4.1,3.4.2"
 	},
+	"replace": {
+		"cliffparnitzky/php-info": "*"
+	},
 	"extra":{
 		"contao":{
 			"sources":{
