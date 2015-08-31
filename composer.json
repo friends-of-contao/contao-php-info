@@ -9,6 +9,10 @@
 			"name":"Cliff Parnitzky",
 			"email":"contao@cliff-parnitzky.de",
 			"role":"Developer"
+		},
+		{
+			"name":"Christoph Krebs",
+			"role":"Developer"
 		}
 	],
 	"support":{
@@ -18,8 +22,11 @@
 	},
 	"require":{
 		"php":">=5.3",
-		"contao/core":">=3.0.0,<4.0.0-dev",
-		"contao-community-alliance/composer-installer":"*"
+		"contao/core":">=3.2.0,<3.6",
+		"contao-community-alliance/composer-plugin":"~2.0"
+	},
+	"conflict": {
+		"contao/core":"3.4.0,3.4.1,3.4.2"
 	},
 	"extra":{
 		"contao":{
@@ -28,7 +35,7 @@
 			}
 		},
 		"branch-alias": {
-			"dev-master": "1.0.x-dev"
+			"dev-feature/disable-check_css-classes": "1.2.x-dev"
 		}
 	}
 }
