@@ -1,5 +1,5 @@
 {
-	"name":"cliffparnitzky/php-info",
+	"name":"friends-of-contao/contao-php-info",
 	"description":"Display phpinfo output in Contao backend.",
 	"keywords":["contao","backend","php info"],
 	"type":"contao-module",
@@ -17,8 +17,8 @@
 	],
 	"support":{
 		"email":"contao@cliff-parnitzky.de",
-		"issues":"https://github.com/cliffparnitzky/PHPInfo/issues",
-		"source":"https://github.com/cliffparnitzky/PHPInfo"
+		"issues":"https://github.com/friends-of-contao/contao-php-info/issues",
+		"source":"https://github.com/friends-of-contao/contao-php-info"
 	},
 	"require":{
 		"php":">=5.3",
@@ -35,7 +35,7 @@
 			}
 		},
 		"branch-alias": {
-			"dev-feature/disable-check_css-classes": "1.2.x-dev"
+			"dev-master": "1.1.x-dev"
 		}
 	}
 }
