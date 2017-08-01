@@ -25,8 +25,8 @@ https://github.com/friends-of-contao/contao-php-info/issues
 Compatibility
 -------------
 
-- min. Contao version: >= 3.2.0
-- max. Contao version: <  3.6.0
+- Contao version >= 3.2.0 ... <  3.6.0
+- Contao version >= 4.4.0
 
 
 Dependency
